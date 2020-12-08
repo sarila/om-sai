@@ -687,7 +687,9 @@ Font Sizes
       -webkit-border-radius: 50px;
       -moz-border-radius: 50px;
       -o-border-radius: 50px;
-      border-radius: 50px; }
+      border-radius: 50px; 
+      object-fit: cover;
+    }
   .testimonial-section .testimonial-slider .qoute {
     position: absolute;
     top: 0;

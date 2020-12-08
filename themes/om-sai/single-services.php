@@ -46,9 +46,18 @@
 				<div class="col-lg-3 col-12">
 					<div class="content py-md-4 py-2 px-md-3  xs-title">
 						<h2 class="section-title mb-4 font-weight-bold ls-title text-uppercase left-border d-block mb-3">Related Services</h2>
-						<a href="service-detail.php" class="d-block box-shadow-1 bg-main xs-title text-white holder px-md-2 px-1 py-1 text-capitalize mb-3">Service 1<i class="fas fa-angle-right ml-3"></i></a>
-						<a href="service-detail.php" class="d-block box-shadow-1 bg-main xs-title text-white holder px-md-2 px-1 py-1 text-capitalize mb-3">Service 2<i class="fas fa-angle-right ml-3"></i></a>
-						<a href="service-detail.php" class="d-block box-shadow-1 bg-main xs-title text-white holder px-md-2 px-1 py-1 text-capitalize mb-3">Service 3<i class="fas fa-angle-right ml-3"></i></a>
+						<?php
+			               $args = array(
+			                 'post_type'  => 'services',
+			                 'post_per_page'  => -1,
+			                 'orderby' => 'title',
+			                 'order' => 'ASC'
+			               );
+			               $services = new WP_Query($args);
+			               while($services->have_posts()) : $services->the_post();
+			            ?>
+						<a href="<?php the_permalink(); ?>" class="d-block box-shadow-1 bg-main xs-title text-white holder px-md-2 px-1 py-1 text-capitalize mb-3"><?php the_title(); ?> <i class="fas fa-angle-right ml-3"></i></a>
+			            <?php    endwhile; wp_reset_postdata(); ?>
 					</div>
 
 				</div>

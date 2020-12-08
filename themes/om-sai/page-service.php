@@ -38,6 +38,7 @@
 			<h3 class="md-title section-title text-black after-border-b-primary">Our Services</h3>
 		</header>
 		<div class="wrapper">
+			<div class="row">
 		
 			<?php
                $args = array(
@@ -49,8 +50,6 @@
                $services = new WP_Query($args);
                while($services->have_posts()) : $services->the_post();
              ?>
-             <div class="row">
-
 				<!-- col -->
 				<div class="col-xl-3 col-lg-4 col-md-6 col-12 mb-4">
 					<div class="holder position-relative bg-white">
@@ -67,8 +66,8 @@
 						</div>
 					</div>
 				</div>
-			</div>
              <?php    endwhile; wp_reset_postdata(); ?>
+             </div>
 			<div class="btn-wrapper text-center mt-4">
 				<a href="<?php echo site_url('/service'); ?>" class="d-inline-block button-one">View all</a>
 			</div>

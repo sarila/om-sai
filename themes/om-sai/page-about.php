@@ -159,8 +159,8 @@
 						<div class="content xs-title mb-2 text-white text-center">
 							<p> <?php echo the_content(); ?></p>
 							<div class="client">
-								<h2 class="ls-title text-sec text-capitalize">Thomas Muller</h2>
-								<h3 class="desig ts-title text-white">CEO of Tech Coderz</h3>
+								<h2 class="ls-title text-white text-capitalize"><?php the_title(); ?></h2>
+								<h3 class="desig ts-title text-white"><?php echo the_field('position'); ?></h3>
 							</div>
 						</div>
 					</div>
