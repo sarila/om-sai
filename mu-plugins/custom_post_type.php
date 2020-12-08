@@ -1,79 +1,30 @@
 <?php
 
-add_action('init', 'mount_slider_post_type', 0 );
-add_action('init', 'mount_testimonial_post_type', 0 );
-add_action('init', 'mount_service_post_type', 0 );
-add_action('init', 'mount_project_post_type', 0 );
+add_action('init', 'omsai_testimonial_post_type', 0 );
+add_action('init', 'omsai_team_post_type', 0 );
+add_action('init', 'omsai_service_post_type', 0 );
 
-
-
-
-function mount_slider_post_type() {
+function omsai_testimonial_post_type() {
       // Labels for the Post Type
     $labels = array(
-      'name'                => _x( 'Sliders', 'Post Type General Name', 'mount' ),
-      'singular_name'       => _x( 'Slider', 'Post Type Singular Name', 'mount' ),
-      'menu_name'           => __( 'Sliders', 'mount' ),
-      'parent_item_colon'   => __( 'Parent Slider', 'mount' ),
-      'all_items'           => __( 'All Sliders', 'mount' ),
-      'view_item'           => __( 'View Slider', 'mount' ),
-      'add_new_item'        => __( 'Add New Slider', 'mount' ),
-      'add_new'             => __( 'Add New Slider', 'mount' ),
-      'edit_item'           => __( 'Edit Slider', 'mount' ),
-      'update_item'         => __( 'Update Slider', 'mount' ),
-      'search_items'        => __( 'Search Slider', 'mount' ),
-      'not_found'           => __( 'No sliders found', 'mount' ),
-      'not_found_in_trash'  => __( 'Not found in trash', 'mount' ),
+      'name'                => _x( 'Testimonials', 'Post Type General Name', 'omsai' ),
+      'singular_name'       => _x( 'Testimonial', 'Post Type Singular Name', 'omsai' ),
+      'menu_name'           => __( 'Testimonials', 'omsai' ),
+      'parent_item_colon'   => __( 'Parent Testimonial', 'omsai' ),
+      'all_items'           => __( 'All Testimonials', 'omsai' ),
+      'view_item'           => __( 'View Testimonial', 'omsai' ),
+      'add_new_item'        => __( 'Add New Testimonial', 'omsai' ),
+      'add_new'             => __( 'Add New Testimonial', 'omsai' ),
+      'edit_item'           => __( 'Edit Testimonial', 'omsai' ),
+      'update_item'         => __( 'Update Testimonial', 'omsai' ),
+      'search_items'        => __( 'Search Testimonial', 'omsai' ),
+      'not_found'           => __( 'No testimonials found', 'omsai' ),
+      'not_found_in_trash'  => __( 'Not found in trash', 'omsai' ),
     );
     // Another Customizations
     $args = array(
-        'label'   => __('Sliders','mount' ),
-        'description' => __('Sliders for Mount', 'mount'),
-        'labels'  => $labels,
-        'supports' => array('title', 'thumbnail',),
-        'hierarchical' => false,
-        'public' => true,
-        'show_ui' => true,
-        'show_in_menus' => true,
-        'show_in_nav_menus' => true,
-        'show_in_admin_bar' => true,
-        'menu_position' => 15,
-        'menu_icon' => 'dashicons-images-alt2',
-        'can_export' => true,
-        'has_archive' => true,
-        'exclude_from_search' => false,
-        'capability_type' => 'page',
-    );
-    // register the post Type
-    register_post_type( 'sliders', $args);
-}
-
-
-
-
-
-
-function mount_testimonial_post_type() {
-      // Labels for the Post Type
-    $labels = array(
-      'name'                => _x( 'Testimonials', 'Post Type General Name', 'mount' ),
-      'singular_name'       => _x( 'Testimonial', 'Post Type Singular Name', 'mount' ),
-      'menu_name'           => __( 'Testimonials', 'mount' ),
-      'parent_item_colon'   => __( 'Parent Testimonial', 'mount' ),
-      'all_items'           => __( 'All Testimonials', 'mount' ),
-      'view_item'           => __( 'View Testimonial', 'mount' ),
-      'add_new_item'        => __( 'Add New Testimonial', 'mount' ),
-      'add_new'             => __( 'Add New Testimonial', 'mount' ),
-      'edit_item'           => __( 'Edit Testimonial', 'mount' ),
-      'update_item'         => __( 'Update Testimonial', 'mount' ),
-      'search_items'        => __( 'Search Testimonial', 'mount' ),
-      'not_found'           => __( 'No testimonials found', 'mount' ),
-      'not_found_in_trash'  => __( 'Not found in trash', 'mount' ),
-    );
-    // Another Customizations
-    $args = array(
-        'label'   => __('Testimonials','mount' ),
-        'description' => __('Testimonials for Mount', 'mount'),
+        'label'   => __('Testimonials','omsai' ),
+        'description' => __('Testimonials for omsai', 'omsai'),
         'labels'  => $labels,
         'supports' => array('title', 'thumbnail','editor'),
         'hierarchical' => false,
@@ -93,94 +44,86 @@ function mount_testimonial_post_type() {
     register_post_type( 'testimonials', $args);
 }
 
-
-
-
-function mount_service_post_type() {
+function omsai_team_post_type() {
       // Labels for the Post Type
     $labels = array(
-      'name'                => _x( 'Services', 'Post Type General Name', 'mount' ),
-      'singular_name'       => _x( 'Service', 'Post Type Singular Name', 'mount' ),
-      'menu_name'           => __( 'Services', 'mount' ),
-      'parent_item_colon'   => __( 'Parent Service', 'mount' ),
-      'all_items'           => __( 'All Services', 'mount' ),
-      'view_item'           => __( 'View Service', 'mount' ),
-      'add_new_item'        => __( 'Add New Service', 'mount' ),
-      'add_new'             => __( 'Add New Service', 'mount' ),
-      'edit_item'           => __( 'Edit Service', 'mount' ),
-      'update_item'         => __( 'Update Service', 'mount' ),
-      'search_items'        => __( 'Search Service', 'mount' ),
-      'not_found'           => __( 'No services found', 'mount' ),
-      'not_found_in_trash'  => __( 'Not found in trash', 'mount' ),
+      'name'                => _x( 'Teams', 'Post Type General Name', 'omsai' ),
+      'singular_name'       => _x( 'Team', 'Post Type Singular Name', 'omsai' ),
+      'menu_name'           => __( 'teams', 'omsai' ),
+      'parent_item_colon'   => __( 'Parent Team', 'omsai' ),
+      'all_items'           => __( 'All Teams', 'omsai' ),
+      'view_item'           => __( 'View Team', 'omsai' ),
+      'add_new_item'        => __( 'Add New Team', 'omsai' ),
+      'add_new'             => __( 'Add New team', 'omsai' ),
+      'edit_item'           => __( 'Edit Team', 'omsai' ),
+      'update_item'         => __( 'Update Team', 'omsai' ),
+      'search_items'        => __( 'Search team', 'omsai' ),
+      'not_found'           => __( 'No Teams found', 'omsai' ),
+      'not_found_in_trash'  => __( 'Not found in trash', 'omsai' ),
     );
     // Another Customizations
     $args = array(
-        'label'   => __('Services','mount' ),
-        'description' => __('Services for Mount', 'mount'),
+        'label'   => __('Teams','omsai' ),
+        'description' => __('Teams for omsai', 'omsai'),
         'labels'  => $labels,
-        'supports' => array('title', 'thumbnail','editor'),
+        'supports' => array('title', 'thumbnail'),
         'hierarchical' => false,
         'public' => true,
         'show_ui' => true,
         'show_in_menus' => true,
         'show_in_nav_menus' => true,
         'show_in_admin_bar' => true,
-        'menu_position' => 5,
+        'menu_position' => 15,
+        'menu_icon' => 'dashicons-groups',
+        'can_export' => true,
+        'has_archive' => true,
+        'exclude_from_search' => false,
+        'capability_type' => 'page',
+    );
+    // register the post Type
+    register_post_type( 'teams', $args);
+}
+
+function omsai_service_post_type() {
+      // Labels for the Post Type
+    $labels = array(
+      'name'                => _x( 'services', 'Post Type General Name', 'omsai' ),
+      'singular_name'       => _x( 'service', 'Post Type Singular Name', 'omsai' ),
+      'menu_name'           => __( 'services', 'omsai' ),
+      'parent_item_colon'   => __( 'Parent service', 'omsai' ),
+      'all_items'           => __( 'All services', 'omsai' ),
+      'view_item'           => __( 'View service', 'omsai' ),
+      'add_new_item'        => __( 'Add New service', 'omsai' ),
+      'add_new'             => __( 'Add New service', 'omsai' ),
+      'edit_item'           => __( 'Edit service', 'omsai' ),
+      'update_item'         => __( 'Update service', 'omsai' ),
+      'search_items'        => __( 'Search service', 'omsai' ),
+      'not_found'           => __( 'No services found', 'omsai' ),
+      'not_found_in_trash'  => __( 'Not found in trash', 'omsai' ),
+    );
+    // Another Customizations
+    $args = array(
+        'label'   => __('services','omsai' ),
+        'description' => __('services for omsai', 'omsai'),
+        'labels'  => $labels,
+        'supports' => array('title', 'thumbnail', 'editor'),
+        'hierarchical' => false,
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menus' => true,
+        'show_in_nav_menus' => true,
+        'show_in_admin_bar' => true,
+        'menu_position' => 15,
         'menu_icon' => 'dashicons-lightbulb',
         'can_export' => true,
         'has_archive' => true,
         'exclude_from_search' => false,
         'capability_type' => 'page',
     );
-
-
-
     // register the post Type
     register_post_type( 'services', $args);
 }
 
-function mount_project_post_type() {
-      // Labels for the Post Type
-    $labels = array(
-      'name'                => _x( 'Projects', 'Post Type General Name', 'mount' ),
-      'singular_name'       => _x( 'Project', 'Post Type Singular Name', 'mount' ),
-      'menu_name'           => __( 'Projects', 'mount' ),
-      'parent_item_colon'   => __( 'Parent Project', 'mount' ),
-      'all_items'           => __( 'All Projects', 'mount' ),
-      'view_item'           => __( 'View Project', 'mount' ),
-      'add_new_item'        => __( 'Add New Project', 'mount' ),
-      'add_new'             => __( 'Add New Project', 'mount' ),
-      'edit_item'           => __( 'Edit Project', 'mount' ),
-      'update_item'         => __( 'Update Project', 'mount' ),
-      'search_items'        => __( 'Search Project', 'mount' ),
-      'not_found'           => __( 'No projects found', 'mount' ),
-      'not_found_in_trash'  => __( 'Not found in trash', 'mount' ),
-    );
-    // Another Customizations
-    $args = array(
-        'label'   => __('Projects','mount' ),
-        'description' => __('Projects for Mount', 'mount'),
-        'labels'  => $labels,
-        'supports' => array('title', 'thumbnail','editor'),
-        'hierarchical' => false,
-        'public' => true,
-        'show_ui' => true,
-        'show_in_menus' => true,
-        'show_in_nav_menus' => true,
-        'show_in_admin_bar' => true,
-        'menu_position' => 5,
-        'menu_icon' => 'dashicons-lightbulb',
-        'can_export' => true,
-        'has_archive' => true,
-        'exclude_from_search' => false,
-        'capability_type' => 'page',
-    );
 
 
-
-    // register the post Type
-    register_post_type( 'projects', $args);
-}
-
-
- ?>
+?>

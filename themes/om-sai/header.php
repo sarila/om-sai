@@ -100,12 +100,24 @@
                                         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                                             Our Services
                                         </a>
+                                        
                                         <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="service-list.php">All</a>
-                                            <a class="dropdown-item" href="service-detail.php">Turf Import</a>
-                                            <a class="dropdown-item" href="service-detail.php">Granules production & sales</a>
-                                            <a class="dropdown-item" href="service-detail.php">All sports floor construction</a>
-                                            <a class="dropdown-item" href="service-detail.php">Hybrid grass import and installation </a>
+                                            <a class="dropdown-item" href="<?php echo site_url('/service'); ?>">All</a>
+
+                                            <?php
+                                               $args = array(
+                                                 'post_type'  => 'services',
+                                                 'post_per_page'  => -1,
+                                                 'orderby' => 'title',
+                                                 'order' => 'ASC'
+                                               );
+                                               $services = new WP_Query($args);
+                                               while($services->have_posts()) : $services->the_post();
+                                                 ?>
+                                            <a class="dropdown-item" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                          <?php    endwhile; wp_reset_postdata(); ?>
+
+
                                         </div>
                                     </li>
                                     <li class="nav-item">
@@ -124,7 +136,7 @@
                             </nav>
                         </div>
                         <div class="header-cta">
-                            <a href="#" class="button-one">Get A Quote</a>
+                            <a href="<?php echo site_url('/contact'); ?>" class="button-one">Get A Quote</a>
                         </div>
                     </nav>
                 </div>

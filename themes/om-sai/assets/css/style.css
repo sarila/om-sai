@@ -431,12 +431,6 @@ Font Sizes
     color: var(--white-color);
     text-decoration: none; }
 
-.page-banner {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/sliders/slider-1.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  padding: 68px 0; }
   .page-banner .page-title {
     color: var(--white-color); }
   .page-banner .bread-crumbs .active {
